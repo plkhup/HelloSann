@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dear Sann</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f5f5f5;
+            text-align: center;
+        }
+        .container {
+            max-width: 600px;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .hidden {
+            display: none;
+        }
+        button {
+            background-color: #ff6b6b;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        button:hover {
+            background-color: #ff5252;
+        }
+        img {
+            width: 100px;
+            height: 100px;
+            margin: 10px;
+            border-radius: 10px;
+            cursor: pointer;
+            border: 3px solid transparent;
+        }
+        img:hover {
+            border-color: #ff6b6b;
+        }
+        .verse {
+            margin-top: 20px;
+            font-style: italic;
+            color: #555;
+        }
+        .rating-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="step1">
+            <h1>Hi Sann,</h1>
+            <p>I just wanted to tell you how much you mean to me. You're truly amazing, and I feel so blessed to have you in my life. 💖</p>
+            <p class="verse">"Love is patient, love is kind. It does not envy, it does not boast, it is not proud." – 1 Corinthians 13:4</p>
+            <button onclick="nextStep('step2')">Next</button>
+        </div>
+
+        <div id="step2" class="hidden">
+            <h1>How are you feeling today?</h1>
+            <p>Rate how you feel on a scale of 1 to 10 (10 being super good):</p>
+            <div class="rating-buttons">
+                <button onclick="nextStep('step3', '1')">1</button>
+                <button onclick="nextStep('step3', '2')">2</button>
+                <button onclick="nextStep('step3', '3')">3</button>
+                <button onclick="nextStep('step3', '4')">4</button>
+                <button onclick="nextStep('step3', '5')">5</button>
+                <button onclick="nextStep('step3', '6')">6</button>
+                <button onclick="nextStep('step3', '7')">7</button>
+                <button onclick="nextStep('step3', '8')">8</button>
+                <button onclick="nextStep('step3', '9')">9</button>
+                <button onclick="nextStep('step3', '10')">10</button>
+            </div>
+            <p class="verse">"Come to me, all you who are weary and burdened, and I will give you rest." – Matthew 11:28</p>
+        </div>
+
+        <div id="step3" class="hidden">
+            <h1>Where should we go?</h1>
+            <p>Let me know your preference for our next date location:</p>
+            <div>
+                <img src="https://via.placeholder.com/100?text=Restaurant" alt="A Romantic Restaurant" onclick="nextStep('step4', 'A Romantic Restaurant')">
+                <img src="https://via.placeholder.com/100?text=Park" alt="A Peaceful Park" onclick="nextStep('step4', 'A Peaceful Park')">
+                <img src="https://via.placeholder.com/100?text=Cafe" alt="A Cozy Cafe" onclick="nextStep('step4', 'A Cozy Cafe')">
+                <img src="https://via.placeholder.com/100?text=Beach" alt="A Scenic Beach" onclick="nextStep('step4', 'A Scenic Beach')">
+            </div>
+            <p class="verse">"The Lord is my shepherd; I shall not want. He makes me lie down in green pastures." – Psalm 23:1-2</p>
+        </div>
+
+        <div id="step4" class="hidden">
+            <h1>What would you like to eat?</h1>
+            <p>Choose your favorite type of food:</p>
+            <div>
+                <img src="https://via.placeholder.com/100?text=Italian" alt="Italian" onclick="nextStep('step5', 'Italian')">
+                <img src="https://via.placeholder.com/100?text=Asian" alt="Asian" onclick="nextStep('step5', 'Asian')">
+                <img src="https://via.placeholder.com/100?text=Mexican" alt="Mexican" onclick="nextStep('step5', 'Mexican')">
+                <img src="https://via.placeholder.com/100?text=Indian" alt="Indian" onclick="nextStep('step5', 'Indian')">
+                <img src="https://via.placeholder.com/100?text=BBQ" alt="Barbecue" onclick="nextStep('step5', 'Barbecue')">
+            </div>
+            <p class="verse">"Taste and see that the Lord is good; blessed is the one who takes refuge in him." – Psalm 34:8</p>
+        </div>
+
+        <div id="step5" class="hidden">
+            <h1>What should we do?</h1>
+            <p>Pick an activity for us:</p>
+            <div>
+                <img src="https://via.placeholder.com/100?text=Movie" alt="Movie Night" onclick="nextStep('step6', 'Movie Night')">
+                <img src="https://via.placeholder.com/100?text=Stars" alt="Stargazing" onclick="nextStep('step6', 'Stargazing')">
+                <img src="https://via.placeholder.com/100?text=Walk" alt="Adventure Walk" onclick="nextStep('step6', 'Adventure Walk')">
+                <img src="https://via.placeholder.com/100?text=Cook" alt="Cooking Together" onclick="nextStep('step6', 'Cooking Together')">
+                <img src="https://via.placeholder.com/100?text=Games" alt="Board Games" onclick="nextStep('step6', 'Board Games')">
+            </div>
+            <p class="verse">"The joy of the Lord is your strength." – Nehemiah 8:10</p>
+        </div>
+
+        <div id="step6" class="hidden">
+            <h1>Thank You, Sann!</h1>
+            <p>Your choices mean so much to me. Can't wait to plan our time together. ❤️</p>
+            <p>Sending your responses...</p>
+            <p class="verse">"And now these three remain: faith, hope and love. But the greatest of these is love." – 1 Corinthians 13:13</p>
+        </div>
+    </div>
+
+    <script>
+        const userChoices = {};
+
+        function nextStep(stepId, choice = null) {
+            // Save the user's choice if provided
+            if (choice) {
+                userChoices[stepId] = choice;
+            }
+
+            // Hide all steps
+            const steps = document.querySelectorAll('.container > div');
+            steps.forEach(step => step.classList.add('hidden'));
+
+            // Show the selected step
+            document.getElementById(stepId).classList.remove('hidden');
+
+            // If it's the final step, send data
+            if (stepId === 'step6') {
+                sendEmail(userChoices);
+            }
+        }
+
+        function sendEmail(data) {
+            const email = "plkhup24@gmail.com"; // Replace with your email
+            const subject = "Date Preferences from Dear Sann";
+            const body = `Here are the responses:
+
+${Object.entries(data).map(([key, value]) => `${key}: ${value}`).join('\n')}`;
+
+            // Open mail client
+            window.location.href = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        }
+    </script>
+</body>
+</html>
