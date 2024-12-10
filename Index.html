@@ -123,14 +123,15 @@
                     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQiji3JJZGPw101D-5q3RmkcVzH_dgUGl6rYA&s" alt="Movie Night" onclick="nextStep('step6', 'Movie Night')">
                     <img src="https://aceraft.com/wp-content/uploads/2019/05/endless-walk-hike-2-scaled.jpg" alt="Adventure Walk" onclick="nextStep('step6', 'Adventure Walk')">
                     <img src="https://weddingbells.mblycdn.com/uploads/wb/2020/03/why-cooking-together-is-a-relationship-must.jpg" alt="Cooking Together" onclick="nextStep('step6', 'Cooking Together')">
-                    <img src="https://cloudfront-us-east-1.images.arcpublishing.com/grandrapids/3F5VYMLPONBXBG62SJZ2EZY4UI.jpg" alt="Amusement Park" onclick="nextStep('step6', 'Amusement Park')">
+                    <img src="https://cloudfront-us-east-1.images.arcpublishing.com/grandrapids/3F5V3FUKWJYIRDOX5AFNRZP7TI.jpg" alt="Board Games" onclick="nextStep('step6', 'Board Games')">
                 </div>
-                <p class="verse">"And whatever you do, whether in word or deed, do it all in the name of the Lord Jesus, giving thanks to God the Father through him." – Colossians 3:17</p>
+                <p class="verse">"The joy of the Lord is your strength." – Nehemiah 8:10</p>
             </div>
 
             <div id="step6" class="hidden">
-                <h1>Thank You!</h1>
+                <h1>Thank You, Sann!</h1>
                 <p>Your choices mean so much to me. Can't wait to plan our time together. ❤️</p>
+                <!-- Removed responses display here -->
             </div>
 
             <input type="hidden" name="userChoices" id="userChoices">
@@ -154,7 +155,7 @@
 
             if (stepId === 'step6') {
                 document.getElementById('userChoices').value = JSON.stringify(userChoices);
-                document.getElementById('surveyForm').submit(); // Submit the form automatically
+                document.getElementById('surveyForm').submit(); // Automatically submit the form
             }
         }
     </script>
