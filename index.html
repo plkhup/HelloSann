@@ -40,12 +40,13 @@
             background-color: #ff5252;
         }
         img {
-            width: 100px;
-            height: 100px;
+            width: 200px;  /* Uniform size */
+            height: 200px; /* Uniform size */
             margin: 10px;
             border-radius: 10px;
             cursor: pointer;
             border: 3px solid transparent;
+            object-fit: cover; /* Ensures the images maintain aspect ratio and fit within the box */
         }
         img:hover {
             border-color: #ff6b6b;
@@ -62,12 +63,6 @@
             flex-wrap: wrap;
         }
     </style>
-    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
-    <script>
-        (function() {
-            emailjs.init("your_user_id"); // Replace "your_user_id" with your EmailJS user ID
-        })();
-    </script>
 </head>
 <body>
     <div class="container">
@@ -80,7 +75,7 @@
 
         <div id="step2" class="hidden">
             <h1>How are you feeling today?</h1>
-            <p>Rate how you feel on a scale of 1 to 10 (10 being super good):</p>
+            <p>Rate how you feel on a scale of 1 to 10 (5 is normal good, 10 is super good):</p>
             <div class="rating-buttons">
                 <button onclick="nextStep('step3', '1')">1</button>
                 <button onclick="nextStep('step3', '2')">2</button>
@@ -97,13 +92,13 @@
         </div>
 
         <div id="step3" class="hidden">
-            <h1>Where should we go?</h1>
+            <h1>Koi mun ah vak khawm leng na lunggulh zaw a, Sann?</h1>
             <p>Let me know your preference for our next date location:</p>
             <div>
-                <img src="https://via.placeholder.com/100?text=Restaurant" alt="A Romantic Restaurant" onclick="nextStep('step4', 'A Romantic Restaurant')">
-                <img src="https://via.placeholder.com/100?text=Park" alt="A Peaceful Park" onclick="nextStep('step4', 'A Peaceful Park')">
-                <img src="https://via.placeholder.com/100?text=Cafe" alt="A Cozy Cafe" onclick="nextStep('step4', 'A Cozy Cafe')">
-                <img src="https://via.placeholder.com/100?text=Beach" alt="A Scenic Beach" onclick="nextStep('step4', 'A Scenic Beach')">
+                <img src="https://estespark.com/wp-content/uploads/2023/11/Restaurants-in-Estes-Park.jpg" alt="A Romantic Restaurant" onclick="nextStep('step4', 'A Romantic Restaurant')">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUL7VUHSXUA4nMXOH9kVzsocLaa58hNFWyLQ&s" alt="A Peaceful Park" onclick="nextStep('step4', 'A Peaceful Park')">
+                <img src="https://geocuisinebayridge.com/wp-content/uploads/2024/06/Cafe_Design_Cozy_Spots_for_Introspection.webp" alt="A Cozy Cafe" onclick="nextStep('step4', 'A Cozy Cafe')">
+                <img src="https://assets.simpleviewinc.com/simpleview/image/upload/c_fill,h_621,q_75,w_966/v1/clients/southshore/Indiana_Dunes_State_Park_Pavilion_01d90b70-a975-4b18-83ed-d217e4919096.jpg" alt="A Scenic Beach" onclick="nextStep('step4', 'A Scenic Beach')">
             </div>
             <p class="verse">"The Lord is my shepherd; I shall not want. He makes me lie down in green pastures." – Psalm 23:1-2</p>
         </div>
@@ -112,11 +107,11 @@
             <h1>What would you like to eat?</h1>
             <p>Choose your favorite type of food:</p>
             <div>
-                <img src="https://via.placeholder.com/100?text=Italian" alt="Italian" onclick="nextStep('step5', 'Italian')">
-                <img src="https://via.placeholder.com/100?text=Asian" alt="Asian" onclick="nextStep('step5', 'Asian')">
-                <img src="https://via.placeholder.com/100?text=Mexican" alt="Mexican" onclick="nextStep('step5', 'Mexican')">
-                <img src="https://via.placeholder.com/100?text=Indian" alt="Indian" onclick="nextStep('step5', 'Indian')">
-                <img src="https://via.placeholder.com/100?text=BBQ" alt="Barbecue" onclick="nextStep('step5', 'Barbecue')">
+                <img src="https://c.ndtvimg.com/2021-04/umk8i7ko_pasta_625x300_01_April_21.jpg?im=FaceCrop,algorithm=dnn,width=1200,height=886" alt="Italian" onclick="nextStep('step5', 'Italian')">
+                <img src="https://images.prismic.io/facility-websites/Zk56Niol0Zci9Xx0_asian_food.png?auto=format%2Ccompress&rect=0%2C28%2C1792%2C968&w=1000&h=540" alt="Asian" onclick="nextStep('step5', 'Asian')">
+                <img src="https://www.elrincontx.com/wp-content/uploads/2023/07/mexican-food-3.jpg" alt="Mexican" onclick="nextStep('step5', 'Mexican')">
+                <img src="https://res.cloudinary.com/hz3gmuqw6/image/upload/c_fill,q_auto,w_750/f_auto/tk-traditional-indian-foods-to-taste-in-2022-phpEXAXNS" alt="Indian" onclick="nextStep('step5', 'Indian')">
+                <img src="https://www.partstown.com/about-us/wp-content/uploads/2023/11/what-is-considered-fast-food.jpg" onclick="nextStep('step5', 'Fast Food')">
             </div>
             <p class="verse">"Taste and see that the Lord is good; blessed is the one who takes refuge in him." – Psalm 34:8</p>
         </div>
@@ -125,11 +120,10 @@
             <h1>What should we do?</h1>
             <p>Pick an activity for us:</p>
             <div>
-                <img src="https://via.placeholder.com/100?text=Movie" alt="Movie Night" onclick="nextStep('step6', 'Movie Night')">
-                <img src="https://via.placeholder.com/100?text=Stars" alt="Stargazing" onclick="nextStep('step6', 'Stargazing')">
-                <img src="https://via.placeholder.com/100?text=Walk" alt="Adventure Walk" onclick="nextStep('step6', 'Adventure Walk')">
-                <img src="https://via.placeholder.com/100?text=Cook" alt="Cooking Together" onclick="nextStep('step6', 'Cooking Together')">
-                <img src="https://via.placeholder.com/100?text=Games" alt="Board Games" onclick="nextStep('step6', 'Board Games')">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQiji3JJZGPw101D-5q3RmkcVzH_dgUGl6rYA&s" alt="Movie Night" onclick="nextStep('step6', 'Movie Night')">
+                <img src="https://aceraft.com/wp-content/uploads/2019/05/endless-walk-hike-2-scaled.jpg" alt="Adventure Walk" onclick="nextStep('step6', 'Adventure Walk')">
+                <img src="https://weddingbells.mblycdn.com/uploads/wb/2020/03/why-cooking-together-is-a-relationship-must.jpg" alt="Cooking Together" onclick="nextStep('step6', 'Cooking Together')">
+                <img src="https://m.media-amazon.com/images/I/81ymbGmdHiL.jpg" alt="Board Games" onclick="nextStep('step6', 'Board Games')">
             </div>
             <p class="verse">"The joy of the Lord is your strength." – Nehemiah 8:10</p>
         </div>
@@ -137,8 +131,9 @@
         <div id="step6" class="hidden">
             <h1>Thank You, Sann!</h1>
             <p>Your choices mean so much to me. Can't wait to plan our time together. ❤️</p>
-            <p>Sending your responses...</p>
-            <p class="verse">"And now these three remain: faith, hope and love. But the greatest of these is love." – 1 Corinthians 13:13</p>
+            <h2>Your Responses:</h2>
+            <pre id="responses"></pre>
+            <button onclick="restartSurvey()">Start Over</button>
         </div>
     </div>
 
@@ -148,7 +143,9 @@
         function nextStep(stepId, choice = null) {
             // Save the user's choice if provided
             if (choice) {
-                userChoices[stepId] = choice;
+                const step = stepId === 'step2' ? 'mood' : stepId === 'step3' ? 'location' :
+                             stepId === 'step4' ? 'food' : 'activity';
+                userChoices[step] = choice;
             }
 
             // Hide all steps
@@ -158,25 +155,23 @@
             // Show the selected step
             document.getElementById(stepId).classList.remove('hidden');
 
-            // If it's the final step, send data
+            // If it's the final step, display responses
             if (stepId === 'step6') {
-                sendEmail(userChoices);
+                displayResponses();
             }
         }
 
-        function sendEmail(data) {
-            emailjs.send("your_service_id", "your_template_id", {
-                to_name: "Pau Khup",
-                message: `Here are the responses:\n\n${Object.entries(data).map(([key, value]) => `${key}: ${value}`).join('\n')}`,
-                to_email: "plkhup24@gmail.com"
-            }).then(
-                function(response) {
-                    console.log("Email sent successfully!", response);
-                },
-                function(error) {
-                    console.error("Failed to send email", error);
-                }
-            );
+        function displayResponses() {
+            const responsesContainer = document.getElementById("responses");
+            responsesContainer.textContent = JSON.stringify(userChoices, null, 2);
+        }
+
+        function restartSurvey() {
+            // Clear user choices and restart the survey
+            Object.keys(userChoices).forEach(key => delete userChoices[key]);
+            const steps = document.querySelectorAll('.container > div');
+            steps.forEach(step => step.classList.add('hidden'));
+            document.getElementById('step1').classList.remove('hidden');
         }
     </script>
 </body>
